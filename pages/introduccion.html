@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción - Seguridad de la Configuración</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title"><a href="../index.html" style="text-decoration: none; color: inherit;">Seguridad de la Configuración</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="introduccion.html" class="nav-link active">Introducción</a></li>
+                    <li><a href="causas.html" class="nav-link">¿Por qué Ocurre?</a></li>
+                    <li><a href="ejemplos.html" class="nav-link">Ejemplos</a></li>
+                    <li><a href="prevencion.html" class="nav-link">Prevención</a></li>
+                    <li><a href="conclusion.html" class="nav-link">Conclusión</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Introducción</h1>
+            <p class="page-subtitle">¿Qué es la Seguridad de la Configuración?</p>
+        </div>
+
+        <div class="page-content">
+            <section class="content-section">
+                <h3>Definición</h3>
+                <p>
+                    La <strong>Seguridad de la Configuración</strong> (Security Misconfiguration) es uno de los fallos de seguridad más comunes y peligrosos en el mundo de la ciberseguridad. Se refiere a los errores en la configuración de un sistema, una aplicación, un servidor o una red que dejan la puerta abierta a los ciberataques.
+                </p>
+                <p>
+                    Es importante entender que <strong>no se trata de un fallo en el código</strong>, sino de un error humano durante la instalación o el mantenimiento del sistema. Un solo ajuste mal configurado puede ser suficiente para comprometer todo el sistema.
+                </p>
+            </section>
+
+            <div class="highlight-box">
+                <h4>🚨 Dato Importante</h4>
+                <p>
+                    Un solo ajuste mal configurado puede ser suficiente para comprometer todo el sistema, independientemente de qué tan seguro sea el código de la aplicación.
+                </p>
+            </div>
+
+            <section class="content-section">
+                <h3>Características Principales</h3>
+                <ul>
+                    <li><strong>Error Humano:</strong> No es un problema del software, sino de cómo se configura</li>
+                    <li><strong>Fácil de Explotar:</strong> Los atacantes pueden aprovechar estas vulnerabilidades con herramientas simples</li>
+                    <li><strong>Común:</strong> Aparece frecuentemente en auditorías de seguridad</li>
+                    <li><strong>Prevenible:</strong> Se puede evitar siguiendo buenas prácticas y procedimientos</li>
+                    <li><strong>Impacto Alto:</strong> Puede comprometer completamente la seguridad del sistema</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h3>¿Por qué es tan Peligroso?</h3>
+                <p>
+                    La seguridad de la configuración es particularmente peligrosa porque:
+                </p>
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>🎯 Fácil de Encontrar</h4>
+                        <p>Los atacantes pueden usar herramientas automatizadas para escanear y encontrar configuraciones incorrectas en miles de sistemas.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔓 Acceso Directo</h4>
+                        <p>Una mala configuración puede dar acceso inmediato al sistema sin necesidad de explotar vulnerabilidades complejas.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>📈 Escalación Rápida</h4>
+                        <p>Una vez dentro, los atacantes pueden usar la configuración incorrecta para obtener más privilegios y acceso.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🕳️ Puerta Trasera</h4>
+                        <p>Puede servir como punto de entrada persistente para futuros ataques, incluso después de otros parches de seguridad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>Contexto en la Seguridad Moderna</h3>
+                <p>
+                    En el panorama actual de ciberseguridad, donde las organizaciones dependen cada vez más de sistemas complejos y interconectados, la configuración segura se ha vuelto crítica. Los atacantes modernos a menudo buscan el "camino de menor resistencia", y las configuraciones incorrectas representan exactamente eso.
+                </p>
+                <p>
+                    La <strong>Security Misconfiguration</strong> está clasificada como una de las vulnerabilidades más críticas en el OWASP Top 10, lo que demuestra su prevalencia e impacto en la seguridad de las aplicaciones web.
+                </p>
+            </section>
+
+            <div class="navigation-buttons">
+                <a href="../index.html" class="nav-btn">
+                    ← Volver al Inicio
+                </a>
+                <a href="causas.html" class="nav-btn">
+                    Siguiente: ¿Por qué Ocurre? →
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Presentación de Seguridad Informática. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Inicializar funcionalidades específicas de la página
+        document.addEventListener('DOMContentLoaded', function() {
+            initPageNavigation();
+        });
+    </script>
+</body>
+</html>

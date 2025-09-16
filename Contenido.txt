@@ -1,0 +1,32 @@
+Introducción: ¿Qué es la Seguridad de la Configuración?
+La Seguridad de la Configuración (Security Misconfiguration) es uno de los fallos de seguridad más comunes y peligrosos. Se refiere a los errores en la configuración de un sistema, una aplicación, un servidor o una red que dejan la puerta abierta a los ciberataques. No se trata de un fallo en el código, sino de un error humano durante la instalación o el mantenimiento. Un solo ajuste mal configurado puede ser suficiente para comprometer todo el sistema.
+
+¿Por qué Ocurre?
+Configuraciones por defecto: Muchos sistemas y aplicaciones vienen con configuraciones predeterminadas que no son seguras. Si el administrador no las cambia, el sistema queda vulnerable. Un ejemplo clásico son las contraseñas predeterminadas, como "admin" o "12345".
+
+Gestión de errores: Si un sistema no maneja los errores correctamente, puede revelar información sensible a los atacantes, como versiones de software o detalles del servidor, lo que les da pistas para futuros ataques.
+
+Servicios innecesarios: Dejar servicios o puertos abiertos que no se utilizan aumenta la superficie de ataque. Cada servicio extra es una oportunidad para un intruso.
+
+Falta de parches y actualizaciones: No aplicar parches de seguridad y mantener el software desactualizado es una forma de mala configuración. Las vulnerabilidades conocidas son explotadas con facilidad por los atacantes.
+
+Ejemplos Prácticos
+Contraseñas por defecto:  Dejar la contraseña de fábrica en un router o una base de datos es una invitación a un ataque. La mayoría de los atacantes saben qué contraseñas probar.
+
+Permisos de archivos y directorios: Si un archivo o directorio que contiene datos sensibles tiene permisos de lectura para todos los usuarios, cualquier persona con acceso al servidor podría ver su contenido. Esto es común en bases de datos o archivos de configuración.
+
+Acceso a la nube (AWS, Azure, GCP): No configurar correctamente las políticas de acceso en servicios en la nube puede dejar los "buckets" de almacenamiento (donde se guardan los archivos) expuestos a Internet. De hecho, ha habido múltiples incidentes de filtraciones de datos masivas por esta razón.
+
+Deshabilitar la autenticación de dos factores (2FA): Muchas aplicaciones ofrecen 2FA como capa extra de seguridad, pero si un administrador la desactiva por comodidad, la cuenta queda vulnerable a ataques de "fuerza bruta" o "phishing".
+
+Prevención y Mitigación
+Proceso de hardening: Realiza un proceso de "hardening" (endurecimiento) del sistema. Esto significa seguir una lista de verificación de seguridad para eliminar configuraciones no seguras y optimizar el sistema.
+
+Escaneo de vulnerabilidades: Utiliza herramientas de escaneo automatizadas para buscar configuraciones incorrectas y servicios innecesarios.
+
+Actualizaciones y parches: Mantén todo el software (sistemas operativos, aplicaciones, librerías) siempre actualizado con los últimos parches de seguridad.
+
+Mínimo privilegio: Configura el sistema de tal forma que los usuarios y procesos solo tengan los permisos mínimos necesarios para realizar sus tareas.
+
+Conclusión para la Presentación
+La seguridad de la configuración no es un problema técnico complejo, sino un desafío de disciplina y buenas prácticas. Es la primera línea de defensa. Un ciberataque exitoso a menudo comienza con un simple error de configuración que podría haberse evitado. Al priorizar una configuración segura desde el principio, se puede reducir drásticamente el riesgo de un ataque. Por lo tanto, es esencial que las organizaciones inviertan en la capacitación de su personal y en procesos rigurosos para garantizar que sus sistemas estén configurados de la forma más segura posible.

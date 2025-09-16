@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevención y Mitigación - Seguridad de la Configuración</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title"><a href="../index.html" style="text-decoration: none; color: inherit;">Seguridad de la Configuración</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="introduccion.html" class="nav-link">Introducción</a></li>
+                    <li><a href="causas.html" class="nav-link">¿Por qué Ocurre?</a></li>
+                    <li><a href="ejemplos.html" class="nav-link">Ejemplos</a></li>
+                    <li><a href="prevencion.html" class="nav-link active">Prevención</a></li>
+                    <li><a href="conclusion.html" class="nav-link">Conclusión</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Prevención y Mitigación</h1>
+            <p class="page-subtitle">Estrategias y mejores prácticas para una configuración segura</p>
+        </div>
+
+        <div class="page-content">
+            <section class="content-section">
+                <h3>1. Proceso de Hardening (Endurecimiento)</h3>
+                <p>
+                    El <strong>hardening</strong> es el proceso sistemático de seguir una lista de verificación de seguridad para eliminar configuraciones no seguras y optimizar el sistema. Es la primera línea de defensa contra ataques.
+                </p>
+                
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>🔧 Configuración Inicial</h4>
+                        <p>Cambiar todas las credenciales por defecto</p>
+                        <p>Deshabilitar servicios innecesarios</p>
+                        <p>Configurar firewalls básicos</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🛡️ Políticas de Seguridad</h4>
+                        <p>Implementar políticas de contraseñas fuertes</p>
+                        <p>Configurar timeouts de sesión</p>
+                        <p>Establecer políticas de acceso</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>📝 Documentación</h4>
+                        <p>Documentar todos los cambios realizados</p>
+                        <p>Crear guías de configuración estándar</p>
+                        <p>Mantener inventario de sistemas</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>✅ Verificación</h4>
+                        <p>Probar configuraciones en entorno de pruebas</p>
+                        <p>Validar que los servicios funcionen correctamente</p>
+                        <p>Realizar auditorías de configuración</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📋 Lista de Verificación Básica</h4>
+                    <ul style="color: white; margin: 0;">
+                        <li>✓ Cambiar credenciales por defecto</li>
+                        <li>✓ Actualizar sistema operativo y aplicaciones</li>
+                        <li>✓ Deshabilitar servicios no utilizados</li>
+                        <li>✓ Configurar firewall</li>
+                        <li>✓ Habilitar logging y monitoreo</li>
+                        <li>✓ Configurar copias de seguridad</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>2. Escaneo de Vulnerabilidades</h3>
+                <p>
+                    Utilizar herramientas de escaneo automatizadas para buscar configuraciones incorrectas y servicios innecesarios de forma regular y sistemática.
+                </p>
+
+                <p><strong>Tipos de herramientas de escaneo:</strong></p>
+                <ul>
+                    <li><strong>Escáneres de red:</strong> Nmap, Masscan para descubrir servicios activos</li>
+                    <li><strong>Escáneres de vulnerabilidades:</strong> Nessus, OpenVAS, Qualys</li>
+                    <li><strong>Escáneres de aplicaciones web:</strong> OWASP ZAP, Burp Suite</li>
+                    <li><strong>Herramientas de configuración:</strong> Lynis, CIS-CAT</li>
+                    <li><strong>Escáneres de nube:</strong> Scout Suite, Prowler, CloudSploit</li>
+                </ul>
+
+                <div class="example-card" style="margin: 1.5rem 0; background: #d1ecf1; border-left: 4px solid #17a2b8;">
+                    <h4>🔄 Frecuencia Recomendada</h4>
+                    <p>
+                        <strong>Escaneos automáticos:</strong> Diarios para sistemas críticos<br>
+                        <strong>Escaneos completos:</strong> Semanales o mensuales<br>
+                        <strong>Auditorías manuales:</strong> Trimestrales<br>
+                        <strong>Después de cambios:</strong> Inmediatamente tras modificaciones
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>3. Actualizaciones y Gestión de Parches</h3>
+                <p>
+                    Mantener todo el software (sistemas operativos, aplicaciones, librerías) siempre actualizado con los últimos parches de seguridad es fundamental para una configuración segura.
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>⚡ Parches Críticos</h4>
+                        <p><strong>Tiempo objetivo:</strong> 24-48 horas</p>
+                        <p>Vulnerabilidades con CVSS ≥ 9.0</p>
+                        <p>Exploits públicos disponibles</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔶 Parches Importantes</h4>
+                        <p><strong>Tiempo objetivo:</strong> 1-2 semanas</p>
+                        <p>Vulnerabilidades con CVSS 7.0-8.9</p>
+                        <p>Sistemas expuestos a Internet</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔷 Parches Moderados</h4>
+                        <p><strong>Tiempo objetivo:</strong> 1 mes</p>
+                        <p>Vulnerabilidades con CVSS 4.0-6.9</p>
+                        <p>Sistemas internos</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>📅 Mantenimiento Regular</h4>
+                        <p><strong>Tiempo objetivo:</strong> Ventana programada</p>
+                        <p>Actualizaciones menores</p>
+                        <p>Mejoras de funcionalidad</p>
+                    </div>
+                </div>
+
+                <p><strong>Proceso recomendado:</strong></p>
+                <ol>
+                    <li><strong>Inventario:</strong> Mantener lista actualizada de todos los sistemas</li>
+                    <li><strong>Monitoreo:</strong> Suscribirse a alertas de seguridad de proveedores</li>
+                    <li><strong>Evaluación:</strong> Analizar impacto y criticidad de cada parche</li>
+                    <li><strong>Pruebas:</strong> Validar parches en entorno de desarrollo</li>
+                    <li><strong>Implementación:</strong> Aplicar en producción con plan de rollback</li>
+                    <li><strong>Verificación:</strong> Confirmar que el parche se aplicó correctamente</li>
+                </ol>
+            </section>
+
+            <section class="content-section">
+                <h3>4. Principio de Mínimo Privilegio</h3>
+                <p>
+                    Configurar el sistema de tal forma que los usuarios y procesos solo tengan los permisos mínimos necesarios para realizar sus tareas. Este principio reduce significativamente el impacto de una posible compromisión.
+                </p>
+
+                <div class="highlight-box">
+                    <h4>🎯 Implementación Práctica</h4>
+                    <p>
+                        <strong>Usuarios:</strong> Cuentas separadas para diferentes roles<br>
+                        <strong>Servicios:</strong> Ejecutar con cuentas de servicio específicas<br>
+                        <strong>Aplicaciones:</strong> Permisos mínimos en base de datos y archivos<br>
+                        <strong>Red:</strong> Segmentación y control de acceso granular
+                    </p>
+                </div>
+
+                <p><strong>Estrategias de implementación:</strong></p>
+                <ul>
+                    <li><strong>Segregación de roles:</strong> Separar administradores, usuarios y servicios</li>
+                    <li><strong>Acceso temporal:</strong> Privilegios elevados solo cuando sea necesario</li>
+                    <li><strong>Revisión periódica:</strong> Auditar permisos regularmente</li>
+                    <li><strong>Automatización:</strong> Usar herramientas de gestión de identidades</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h3>5. Mejores Prácticas Adicionales</h3>
+                
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>🔐 Autenticación Robusta</h4>
+                        <p>Implementar 2FA/MFA en todos los sistemas críticos</p>
+                        <p>Usar gestores de contraseñas corporativos</p>
+                        <p>Políticas de contraseñas fuertes</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>📊 Monitoreo Continuo</h4>
+                        <p>Logs centralizados y análisis en tiempo real</p>
+                        <p>Alertas automáticas para cambios de configuración</p>
+                        <p>Dashboards de seguridad</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔄 Copias de Seguridad</h4>
+                        <p>Backups automáticos y regulares</p>
+                        <p>Pruebas de restauración periódicas</p>
+                        <p>Almacenamiento seguro offline</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>📚 Capacitación</h4>
+                        <p>Entrenamiento regular del personal</p>
+                        <p>Documentación actualizada</p>
+                        <p>Simulacros de incidentes</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>6. Herramientas y Frameworks de Referencia</h3>
+                <p>
+                    Utilizar estándares y frameworks reconocidos internacionalmente para guiar la configuración segura:
+                </p>
+
+                <ul>
+                    <li><strong>CIS Controls:</strong> Center for Internet Security - Controles de seguridad prioritarios</li>
+                    <li><strong>NIST Cybersecurity Framework:</strong> Marco de ciberseguridad del NIST</li>
+                    <li><strong>ISO 27001:</strong> Estándar internacional de gestión de seguridad de la información</li>
+                    <li><strong>OWASP:</strong> Guías específicas para seguridad de aplicaciones web</li>
+                    <li><strong>SANS:</strong> Recursos y guías de configuración segura</li>
+                </ul>
+
+                <div class="example-card" style="margin: 1.5rem 0; background: #d4edda; border-left: 4px solid #28a745;">
+                    <h4>✅ Beneficios de Usar Frameworks</h4>
+                    <p>
+                        • Metodología probada y reconocida<br>
+                        • Reducción de errores humanos<br>
+                        • Cumplimiento regulatorio<br>
+                        • Benchmarking con la industria<br>
+                        • Mejora continua estructurada
+                    </p>
+                </div>
+            </section>
+
+            <div class="navigation-buttons">
+                <a href="ejemplos.html" class="nav-btn">
+                    ← Anterior: Ejemplos Prácticos
+                </a>
+                <a href="conclusion.html" class="nav-btn">
+                    Siguiente: Conclusión →
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Presentación de Seguridad Informática. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initPageNavigation();
+        });
+    </script>
+</body>
+</html>

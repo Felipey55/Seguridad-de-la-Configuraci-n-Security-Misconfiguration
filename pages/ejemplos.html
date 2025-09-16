@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Prácticos - Seguridad de la Configuración</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title"><a href="../index.html" style="text-decoration: none; color: inherit;">Seguridad de la Configuración</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="introduccion.html" class="nav-link">Introducción</a></li>
+                    <li><a href="causas.html" class="nav-link">¿Por qué Ocurre?</a></li>
+                    <li><a href="ejemplos.html" class="nav-link active">Ejemplos</a></li>
+                    <li><a href="prevencion.html" class="nav-link">Prevención</a></li>
+                    <li><a href="conclusion.html" class="nav-link">Conclusión</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Ejemplos Prácticos</h1>
+            <p class="page-subtitle">Casos reales de errores de configuración y sus consecuencias</p>
+        </div>
+
+        <div class="page-content">
+            <section class="content-section">
+                <h3>1. Contraseñas por Defecto</h3>
+                <p>
+                    Dejar la contraseña de fábrica en un router, base de datos, o cualquier sistema es una <strong>invitación directa a un ataque</strong>. La mayoría de los atacantes conocen exactamente qué contraseñas probar para cada tipo de dispositivo.
+                </p>
+                
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>🌐 Routers Domésticos</h4>
+                        <p><strong>Credenciales típicas:</strong> admin/admin, admin/password, root/admin</p>
+                        <p><strong>Riesgo:</strong> Control total de la red doméstica, intercepción de tráfico</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🗄️ Bases de Datos</h4>
+                        <p><strong>Credenciales típicas:</strong> sa/sa, root/root, postgres/postgres</p>
+                        <p><strong>Riesgo:</strong> Acceso a todos los datos sensibles de la organización</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>📹 Cámaras IP</h4>
+                        <p><strong>Credenciales típicas:</strong> admin/12345, admin/admin</p>
+                        <p><strong>Riesgo:</strong> Vigilancia no autorizada, violación de privacidad</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>☁️ Servicios en la Nube</h4>
+                        <p><strong>Credenciales típicas:</strong> administrator/password</p>
+                        <p><strong>Riesgo:</strong> Acceso a infraestructura completa en la nube</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📊 Estadística Alarmante</h4>
+                    <p>
+                        Según estudios de ciberseguridad, más del 60% de los dispositivos IoT mantienen sus credenciales por defecto, convirtiéndolos en objetivos fáciles para botnets masivos.
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>2. Permisos Incorrectos de Archivos y Directorios</h3>
+                <p>
+                    Si un archivo o directorio que contiene datos sensibles tiene permisos de lectura para todos los usuarios, cualquier persona con acceso al servidor podría ver su contenido.
+                </p>
+                
+                <p><strong>Ejemplos comunes:</strong></p>
+                <ul>
+                    <li><strong>Archivos de configuración:</strong> config.php, settings.ini con credenciales de base de datos</li>
+                    <li><strong>Archivos de backup:</strong> database.sql, backup.tar.gz accesibles públicamente</li>
+                    <li><strong>Logs del sistema:</strong> Archivos de registro que contienen información sensible</li>
+                    <li><strong>Claves privadas:</strong> Certificados SSL/SSH con permisos incorrectos</li>
+                </ul>
+
+                <div class="example-card" style="margin: 1.5rem 0; background: #fff3cd; border-left: 4px solid #ffc107;">
+                    <h4>⚠️ Caso Real: GitHub</h4>
+                    <p>
+                        En 2013, se descubrieron miles de repositorios públicos en GitHub que contenían credenciales de AWS, claves API, y contraseñas en archivos de configuración. Esto permitió a atacantes acceder a infraestructuras completas de empresas.
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>3. Configuración Incorrecta en la Nube</h3>
+                <p>
+                    No configurar correctamente las políticas de acceso en servicios en la nube puede dejar los "buckets" de almacenamiento expuestos a Internet. Ha habido múltiples incidentes de filtraciones masivas por esta razón.
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>🪣 Amazon S3 Buckets</h4>
+                        <p>Buckets configurados como públicos cuando deberían ser privados</p>
+                        <p><strong>Consecuencia:</strong> Millones de registros expuestos públicamente</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>☁️ Azure Blob Storage</h4>
+                        <p>Contenedores sin autenticación requerida</p>
+                        <p><strong>Consecuencia:</strong> Acceso directo a datos corporativos</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔧 Google Cloud Storage</h4>
+                        <p>Permisos "allUsers" aplicados incorrectamente</p>
+                        <p><strong>Consecuencia:</strong> Datos sensibles indexados por motores de búsqueda</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔑 IAM Policies</h4>
+                        <p>Políticas de acceso demasiado permisivas</p>
+                        <p><strong>Consecuencia:</strong> Escalación de privilegios no autorizada</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📈 Casos Documentados</h4>
+                    <p>
+                        <strong>Capital One (2019):</strong> 100 millones de registros expuestos debido a configuración incorrecta de AWS.<br>
+                        <strong>Accenture (2017):</strong> 137 GB de datos en buckets S3 sin protección.<br>
+                        <strong>Verizon (2017):</strong> 14 millones de registros de clientes expuestos en AWS S3.
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>4. Autenticación de Dos Factores (2FA) Deshabilitada</h3>
+                <p>
+                    Muchas aplicaciones ofrecen 2FA como capa extra de seguridad, pero si un administrador la desactiva por comodidad, la cuenta queda vulnerable a ataques de "fuerza bruta" o "phishing".
+                </p>
+
+                <p><strong>Escenarios problemáticos:</strong></p>
+                <ul>
+                    <li><strong>Cuentas administrativas:</strong> Sin 2FA en cuentas con privilegios elevados</li>
+                    <li><strong>Servicios críticos:</strong> Acceso a sistemas de producción sin verificación adicional</li>
+                    <li><strong>APIs sensibles:</strong> Endpoints de administración sin autenticación robusta</li>
+                    <li><strong>VPN corporativa:</strong> Acceso remoto sin verificación en dos pasos</li>
+                </ul>
+
+                <div class="example-card" style="margin: 1.5rem 0; background: #f8d7da; border-left: 4px solid #dc3545;">
+                    <h4>🎯 Impacto Real</h4>
+                    <p>
+                        El 81% de las violaciones de datos están relacionadas con credenciales débiles o robadas. La implementación de 2FA puede prevenir el 99.9% de estos ataques automatizados.
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>5. Otros Ejemplos Críticos</h3>
+                
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>🐛 Debug Mode Activo</h4>
+                        <p>Aplicaciones web en producción con modo de depuración activado</p>
+                        <p><strong>Riesgo:</strong> Exposición de código fuente y variables internas</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔍 Directory Listing</h4>
+                        <p>Servidores web que muestran contenido de directorios</p>
+                        <p><strong>Riesgo:</strong> Descubrimiento de archivos sensibles</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🌐 CORS Mal Configurado</h4>
+                        <p>Políticas de Cross-Origin demasiado permisivas</p>
+                        <p><strong>Riesgo:</strong> Ataques de cross-site scripting</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔒 SSL/TLS Débil</h4>
+                        <p>Certificados expirados o algoritmos de cifrado obsoletos</p>
+                        <p><strong>Riesgo:</strong> Intercepción de comunicaciones</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="navigation-buttons">
+                <a href="causas.html" class="nav-btn">
+                    ← Anterior: ¿Por qué Ocurre?
+                </a>
+                <a href="prevencion.html" class="nav-btn">
+                    Siguiente: Prevención →
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Presentación de Seguridad Informática. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initPageNavigation();
+        });
+    </script>
+</body>
+</html>

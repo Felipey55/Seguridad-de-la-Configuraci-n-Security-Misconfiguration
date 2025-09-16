@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Por qué Ocurre? - Seguridad de la Configuración</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title"><a href="../index.html" style="text-decoration: none; color: inherit;">Seguridad de la Configuración</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="introduccion.html" class="nav-link">Introducción</a></li>
+                    <li><a href="causas.html" class="nav-link active">¿Por qué Ocurre?</a></li>
+                    <li><a href="ejemplos.html" class="nav-link">Ejemplos</a></li>
+                    <li><a href="prevencion.html" class="nav-link">Prevención</a></li>
+                    <li><a href="conclusion.html" class="nav-link">Conclusión</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">¿Por qué Ocurre?</h1>
+            <p class="page-subtitle">Principales causas de los errores de configuración</p>
+        </div>
+
+        <div class="page-content">
+            <section class="content-section">
+                <h3>1. Configuraciones por Defecto</h3>
+                <p>
+                    Muchos sistemas y aplicaciones vienen con configuraciones predeterminadas que <strong>no son seguras</strong>. Si el administrador no las cambia, el sistema queda vulnerable desde el momento de la instalación.
+                </p>
+                <div class="highlight-box">
+                    <h4>🔑 Ejemplo Clásico</h4>
+                    <p>
+                        Las contraseñas predeterminadas como "admin", "password", "12345" o "root" son conocidas por todos los atacantes y están en las primeras posiciones de sus diccionarios de ataques.
+                    </p>
+                </div>
+                <p>
+                    <strong>¿Por qué sucede esto?</strong>
+                </p>
+                <ul>
+                    <li>Los fabricantes priorizan la facilidad de instalación sobre la seguridad</li>
+                    <li>Los administradores asumen que las configuraciones por defecto son seguras</li>
+                    <li>Falta de documentación clara sobre qué configuraciones cambiar</li>
+                    <li>Presión por poner sistemas en producción rápidamente</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h3>2. Gestión Inadecuada de Errores</h3>
+                <p>
+                    Si un sistema no maneja los errores correctamente, puede revelar información sensible a los atacantes, como versiones de software, rutas de archivos, o detalles del servidor.
+                </p>
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>🚨 Stack Traces Expuestos</h4>
+                        <p>Mostrar errores completos de programación que revelan la estructura interna del sistema.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>📄 Páginas de Error Detalladas</h4>
+                        <p>Páginas 404 o 500 que muestran información sobre el servidor web y su configuración.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🗂️ Listados de Directorios</h4>
+                        <p>Permitir que se listen los contenidos de directorios cuando no hay archivo index.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔍 Información de Debug</h4>
+                        <p>Dejar activados los modos de depuración en entornos de producción.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>3. Servicios Innecesarios Activos</h3>
+                <p>
+                    Dejar servicios o puertos abiertos que no se utilizan aumenta significativamente la <strong>superficie de ataque</strong>. Cada servicio extra es una oportunidad adicional para un intruso.
+                </p>
+                <p>
+                    <strong>Problemas comunes:</strong>
+                </p>
+                <ul>
+                    <li><strong>Servicios de desarrollo:</strong> Dejar activos servicios como SSH, FTP, o bases de datos de prueba</li>
+                    <li><strong>Puertos abiertos:</strong> No cerrar puertos que fueron abiertos temporalmente</li>
+                    <li><strong>Servicios por defecto:</strong> Mantener servicios que vienen preinstalados pero no se usan</li>
+                    <li><strong>Protocolos inseguros:</strong> Usar HTTP en lugar de HTTPS, Telnet en lugar de SSH</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h3>4. Falta de Parches y Actualizaciones</h3>
+                <p>
+                    No aplicar parches de seguridad y mantener el software desactualizado es una forma crítica de mala configuración. Las vulnerabilidades conocidas son explotadas con facilidad por los atacantes.
+                </p>
+                <div class="highlight-box">
+                    <h4>⏰ El Factor Tiempo</h4>
+                    <p>
+                        Los atacantes a menudo lanzan exploits automatizados pocas horas después de que se publican las vulnerabilidades. Un sistema sin parches es un objetivo fácil.
+                    </p>
+                </div>
+                <p>
+                    <strong>Razones por las que no se actualizan los sistemas:</strong>
+                </p>
+                <ul>
+                    <li>Miedo a que las actualizaciones rompan la funcionalidad existente</li>
+                    <li>Falta de ventanas de mantenimiento programadas</li>
+                    <li>Sistemas críticos que no pueden detenerse</li>
+                    <li>Desconocimiento de la existencia de nuevos parches</li>
+                    <li>Procesos de aprobación de cambios demasiado lentos</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h3>Factores Contribuyentes</h3>
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>👥 Factor Humano</h4>
+                        <p>Falta de capacitación, presión de tiempo, o simple descuido en la configuración de sistemas.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>📚 Documentación Deficiente</h4>
+                        <p>Manuales incompletos o desactualizados que no explican claramente las configuraciones seguras.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🔄 Falta de Procesos</h4>
+                        <p>Ausencia de procedimientos estandarizados para la configuración y mantenimiento de sistemas.</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>🎯 Complejidad del Sistema</h4>
+                        <p>Sistemas modernos con múltiples componentes que interactúan de formas complejas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="navigation-buttons">
+                <a href="introduccion.html" class="nav-btn">
+                    ← Anterior: Introducción
+                </a>
+                <a href="ejemplos.html" class="nav-btn">
+                    Siguiente: Ejemplos Prácticos →
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Presentación de Seguridad Informática. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initPageNavigation();
+        });
+    </script>
+</body>
+</html>
