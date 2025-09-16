@@ -4,7 +4,7 @@
 
 Este proyecto es una **presentación web interactiva** y una **aplicación de demostración práctica** sobre **Seguridad de la Configuración** (Security Misconfiguration), uno de los fallos de seguridad más comunes y peligrosos en sistemas informáticos según el OWASP Top 10.
 
-El proyecto incluye:
+**El proyecto incluye:**
 - 📖 **Presentación teórica**: Sitio web educativo con contenido completo
 - 🧪 **Aplicación práctica**: Sistema con vulnerabilidades intencionalmente implementadas
 - 🎯 **Demostraciones en vivo**: Ejemplos reales de configuraciones inseguras
@@ -39,10 +39,10 @@ Presentacion/
 └── README.md               # Este archivo
 ```
 
-
 ## 🚀 Inicio Rápido
 
 ### 📖 Presentación Web (Estática)
+
 ```bash
 # Opción 1: Servidor Python
 python -m http.server 8000
@@ -53,16 +53,20 @@ npx serve .
 # Opción 3: Servidor PHP
 php -S localhost:8000
 ```
+
 **Acceso:** `http://localhost:8000`
 
 ### 🧪 Aplicación de Demostración (PHP)
+
 ```bash
 # Iniciar servidor PHP para EjemPractico
 php -S localhost:8081 -t EjemPractico
 ```
+
 **Acceso:** `http://localhost:8081`
 
 ### 🔑 Credenciales de Prueba
+
 | Usuario | Contraseña | Rol | Estado |
 |---------|------------|-----|--------|
 | admin | admin123 | Administrador | ✅ Activo |
@@ -75,14 +79,14 @@ php -S localhost:8081 -t EjemPractico
 
 ### 📱 Páginas y Funcionalidades
 
-#### 🏠 **Página Principal** (`index.php`)
+#### 🏠 Página Principal (`index.php`)
 - **Propósito:** Punto de entrada con información general
 - **Vulnerabilidades:**
   - Información del sistema expuesta
   - Configuraciones PHP inseguras
   - Datos sensibles en JavaScript
 
-#### 🔑 **Sistema de Login** (`login.php`)
+#### 🔑 Sistema de Login (`login.php`)
 - **Propósito:** Autenticación de usuarios
 - **Vulnerabilidades:**
   - Credenciales por defecto débiles
@@ -90,7 +94,7 @@ php -S localhost:8081 -t EjemPractico
   - Logging inseguro de credenciales
   - Mensajes de error detallados
 
-#### 👨‍💼 **Panel Administrativo** (`admin.php`)
+#### 👨‍💼 Panel Administrativo (`admin.php`)
 - **Propósito:** Gestión administrativa
 - **Vulnerabilidades:**
   - Acceso sin autenticación adecuada
@@ -98,7 +102,7 @@ php -S localhost:8081 -t EjemPractico
   - Información personal sensible (SSN, cuentas bancarias)
   - Contraseñas de usuarios en texto plano
 
-#### ⚙️ **Configuraciones** (`config.php`)
+#### ⚙️ Configuraciones (`config.php`)
 - **Propósito:** Configuraciones del sistema
 - **Vulnerabilidades:**
   - Archivo de configuración accesible públicamente
@@ -106,7 +110,7 @@ php -S localhost:8081 -t EjemPractico
   - Claves de API y secretos en texto plano
   - Configuraciones PHP inseguras
 
-#### ℹ️ **Información del Sistema** (`info.php`)
+#### ℹ️ Información del Sistema (`info.php`)
 - **Propósito:** Información técnica del servidor
 - **Vulnerabilidades:**
   - `phpinfo()` accesible públicamente
@@ -115,57 +119,59 @@ php -S localhost:8081 -t EjemPractico
 
 ### 🔓 Cómo Demostrar las Vulnerabilidades
 
-#### 1. **Acceso No Autorizado**
+#### 1. Acceso No Autorizado
 - Acceder directamente a `admin.php` sin autenticación
 - El sistema permite acceso con escalación automática de privilegios
 
-#### 2. **Exposición de Credenciales**
+#### 2. Exposición de Credenciales
 - Visitar `login.php` para ver todas las credenciales disponibles
 - Revisar `config.php` para credenciales de base de datos
 - Examinar `sample_data.php` para datos completos
 
-#### 3. **Información Sensible Expuesta**
+#### 3. Información Sensible Expuesta
 - Acceder a `info.php` para ver `phpinfo()`
 - Revisar `db_connection.php` para test de conexión
 - Examinar la consola del navegador en cualquier página
 
-#### 4. **Datos Financieros y Personales**
-- En `admin.php` ver:
-  - Salarios de empleados
-  - Números de Seguridad Social (SSN)
-  - Cuentas bancarias
-  - Información financiera completa
+#### 4. Datos Financieros y Personales
+En `admin.php` se pueden ver:
+- Salarios de empleados
+- Números de Seguridad Social (SSN)
+- Cuentas bancarias
+- Información financiera completa
 
 ### ⚠️ Vulnerabilidades Implementadas
 
-#### 🔴 **Críticas**
-1. **Credenciales por Defecto**
-   - Usuarios con contraseñas débiles y predecibles
-   - Credenciales hardcodeadas en código
+#### 🔴 Críticas
 
-2. **Exposición de Información Sensible**
-   - Datos financieros accesibles sin autenticación
-   - Información personal (SSN, cuentas bancarias)
-   - Credenciales de base de datos expuestas
+**1. Credenciales por Defecto**
+- Usuarios con contraseñas débiles y predecibles
+- Credenciales hardcodeadas en código
 
-3. **Archivos de Configuración Accesibles**
-   - `config.php` accesible públicamente
-   - `db_connection.php` con credenciales
-   - `sample_data.php` con todos los datos
+**2. Exposición de Información Sensible**
+- Datos financieros accesibles sin autenticación
+- Información personal (SSN, cuentas bancarias)
+- Credenciales de base de datos expuestas
 
-#### 🟡 **Altas**
-4. **Configuraciones PHP Inseguras**
-   - `display_errors` habilitado en producción
-   - `allow_url_fopen` habilitado
-   - Headers de seguridad faltantes
+**3. Archivos de Configuración Accesibles**
+- `config.php` accesible públicamente
+- `db_connection.php` con credenciales
+- `sample_data.php` con todos los datos
 
-5. **Logging Inseguro**
-   - Contraseñas registradas en logs
-   - Información sensible en logs de errores
+#### 🟡 Altas
 
-6. **Falta de Control de Acceso**
-   - Páginas administrativas sin autenticación
-   - Escalación automática de privilegios
+**4. Configuraciones PHP Inseguras**
+- `display_errors` habilitado en producción
+- `allow_url_fopen` habilitado
+- Headers de seguridad faltantes
+
+**5. Logging Inseguro**
+- Contraseñas registradas en logs
+- Información sensible en logs de errores
+
+**6. Falta de Control de Acceso**
+- Páginas administrativas sin autenticación
+- Escalación automática de privilegios
 
 ## 📖 Presentación Web
 
@@ -189,63 +195,63 @@ php -S localhost:8081 -t EjemPractico
 - **Dispositivos Móviles**: Diseño totalmente responsive
 - **SEO Friendly**: Meta tags y estructura semántica
 
-## Contenido de la Presentación
+## 📚 Contenido de la Presentación
 
-### 1. **Introducción**
+### 1. Introducción
 - Definición de Security Misconfiguration
 - Por qué es peligroso
 - Contexto en la seguridad moderna
 
-### 2. **Causas**
+### 2. Causas
 - Configuraciones por defecto
 - Gestión inadecuada de errores
 - Servicios innecesarios activos
 - Falta de parches y actualizaciones
 
-### 3. **Ejemplos Prácticos**
+### 3. Ejemplos Prácticos
 - Contraseñas por defecto
 - Permisos incorrectos de archivos
 - Configuración incorrecta en la nube
 - 2FA deshabilitado
 
-### 4. **Prevención**
+### 4. Prevención
 - Proceso de hardening
 - Escaneo de vulnerabilidades
 - Gestión de parches
 - Principio de mínimo privilegio
 
-### 5. **Conclusión**
+### 5. Conclusión
 - Reflexiones sobre disciplina vs complejidad
 - Importancia de la configuración segura
 - Llamada a la acción
 
 ## 🛡️ Medidas de Mitigación Recomendadas
 
-### 1. **Configuración Segura**
+### 1. Configuración Segura
 - Deshabilitar `display_errors` en producción
 - Configurar headers de seguridad apropiados
 - Usar configuraciones PHP seguras
 - Implementar HTTPS/SSL
 
-### 2. **Gestión de Credenciales**
+### 2. Gestión de Credenciales
 - Eliminar credenciales por defecto
 - Usar contraseñas fuertes y únicas
 - Implementar gestión segura de secretos
 - Usar variables de entorno para configuraciones
 
-### 3. **Control de Acceso**
+### 3. Control de Acceso
 - Implementar autenticación robusta
 - Aplicar principio de menor privilegio
 - Proteger archivos de configuración
 - Usar autorización basada en roles
 
-### 4. **Logging Seguro**
+### 4. Logging Seguro
 - No registrar información sensible
 - Implementar logging estructurado
 - Proteger archivos de log
 - Usar sistemas de monitoreo seguros
 
-### 5. **Protección de Datos**
+### 5. Protección de Datos
 - Cifrar datos sensibles
 - Implementar controles de acceso a datos
 - Usar conexiones seguras (HTTPS/SSL)
@@ -255,11 +261,11 @@ php -S localhost:8081 -t EjemPractico
 
 ### 📖 Presentación Web (GitHub Pages)
 
-1. **Subir** el proyecto a un repositorio de GitHub
-2. **Ir** a Settings > Pages
-3. **Seleccionar** source: Deploy from a branch
-4. **Elegir** branch: main (o master)
-5. **Seleccionar** folder: / (root)
+1. Subir el proyecto a un repositorio de GitHub
+2. Ir a Settings > Pages
+3. Seleccionar source: Deploy from a branch
+4. Elegir branch: main (o master)
+5. Seleccionar folder: / (root)
 6. El sitio estará disponible en `https://username.github.io/repository-name`
 
 ### 🧪 Aplicación de Demostración (Local)
@@ -290,7 +296,7 @@ php -S localhost:8081 -t EjemPractico
 - **JavaScript**: Interactividad del lado cliente
 - **MySQL**: Estructura de base de datos (simulada)
 
-## Mejores Prácticas Implementadas
+## 🔧 Mejores Prácticas Implementadas
 
 ### 🎨 Frontend
 - Código semántico y accesible
@@ -310,7 +316,7 @@ php -S localhost:8081 -t EjemPractico
 - Carga rápida de recursos
 - SEO optimizado
 
-## Personalización
+## 🎨 Personalización
 
 ### Colores
 Puedes modificar el esquema de colores editando las variables CSS en `css/styles.css`:
@@ -370,5 +376,4 @@ Este proyecto es de uso educativo. Siéntete libre de usar, modificar y distribu
 
 ---
 
-**🔍 Para comenzar, inicia ambos servidores y explora tanto la teoría como la práctica de las vulnerabilidades de configuración de seguridad.**#   S e g u r i d a d - d e - l a - C o n f i g u r a c i - n - S e c u r i t y - M i s c o n f i g u r a t i o n  
- 
+**🔍 Para comenzar, inicia ambos servidores y explora tanto la teoría como la práctica de las vulnerabilidades de configuración de seguridad.**
